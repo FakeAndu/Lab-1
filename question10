@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int A3_stock = 1000, A4_stock = 1000, A5_stock = 1000;  // Initial stock
+    int A3_order, A4_order, A5_order;
+
+    // Ask for the order quantities
+    printf("Enter the number of A3 paper packs to order (up to 1000): ");
+    scanf("%d", &A3_order);
+
+    printf("Enter the number of A4 paper packs to order (up to 1000): ");
+    scanf("%d", &A4_order);
+
+    printf("Enter the number of A5 paper packs to order (up to 1000): ");
+    scanf("%d", &A5_order);
+
+    // Update the stock
+    if (A3_order <= A3_stock && A4_order <= A4_stock && A5_order <= A5_stock) {
+        A3_stock -= A3_order;
+        A4_stock -= A4_order;
+        A5_stock -= A5_order;
+
+        // Display order details and updated stock
+        printf("Order details:\n");
+        printf("A3 packs ordered: %d\n", A3_order);
+        printf("A4 packs ordered: %d\n", A4_order);
+        printf("A5 packs ordered: %d\n", A5_order);
+
+        printf("Updated stock levels:\n");
+        printf("A3 stock: %d\n", A3_stock);
+        printf("A4 stock: %d\n", A4_stock);
+        printf("A5 stock: %d\n", A5_stock);
+    } else {
+        printf("Error: You cannot order more than available stock.\n");
+    }
+
+    return 0;
+}
